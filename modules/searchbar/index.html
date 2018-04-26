@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <p>Type any state name to search.</p>
+  <p>Search is determined based on the letters being present within the word.</p>
+  <p>Exampe: 'ca' will return all words containg 'c' and 'a' in that order and not just words starting with 'ca'.</p>
+  <div class="searchContainer">
+    <div class="searchBar">
+      <span id="searchBtn"><i class="fa fa-search fa-lg"></i></span>
+      <input id="searchText" placeholder="How can we help?" maxlength="35">
+      <span id="angle-up"><i class="fa fa-angle-up"></i></span>
+      <span id="angle-down"><i class="fa fa-angle-down"></i></span>
+    </div>
+    <div id="searchResults"></div>
+  </div>
+
+
+  <script src="js/states.json" charset="utf-8"></script>
+  <script src="js/searchbar.js" charset="utf-8"></script>
+  <script src="js/main.js" charset="utf-8"></script>
+</body>
+
+</html>
