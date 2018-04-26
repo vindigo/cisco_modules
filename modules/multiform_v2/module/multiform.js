@@ -1,5 +1,5 @@
 /**
- * Represents a multiform or 'wizard' form. Form elements must be wrapped in a
+ * Represents a multipage form or 'wizard' form. Form elements must be wrapped in a
  * div element with a class of 'tab'.
  * @module multiform
  * @version 1.0

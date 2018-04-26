@@ -1,3 +1,19 @@
+/**
+ * Represents a searchbar field. Data is pulled from json file.
+ *
+ * @module searchbar
+ * @version 1.0
+ * @author Richard Frausto
+ * @requires FontAwesome icon library https://fontawesome.com/
+ * @example
+ * 1. User inputs search text
+ * 2. User can scroll up/down using the arrow buttons
+ * 3. User selects entry by clicking on the magnifying glass icon on the left.
+ *
+ * @todo
+ * 1. Real data needs to be connected to searchbar for proper testing.
+ * 2. Behavior for user selection needs to be writtn. Was not provided.
+ */
 var searchbar = (function() {
 
   // cache DOM
@@ -24,6 +40,8 @@ var searchbar = (function() {
     var text = searchText.value.toUpperCase();
     currentSelectionIndex = 0;
     searchResults.innerHTML = "";
+
+    // data is pulled from states.json file
     searchFilter(data, text);
 
     if ( text ){
@@ -90,6 +108,9 @@ var searchbar = (function() {
   function handleSearchBtn() {
     console.log("search clicked");
     alert( currentSelection + " submitted.");
+
+    // Code can be added here to handle selection. Requirements were not
+    // provided at the time of writing this module.
   }
 
 })();
