@@ -9,11 +9,12 @@ document.onreadystatechange = function() {
           var config = {
               position: 'middle',
               content: xhttp.responseText,
-              submitBtn: true
+              submitBtn: true,
+              cancelBtn: true
             }
 
           var myModal = new objModal(config)
-          myModal.openModal(); 
+          myModal.openModal();
 
         })
     });

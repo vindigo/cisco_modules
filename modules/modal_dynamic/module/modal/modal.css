@@ -45,6 +45,16 @@
   to: {opacity: 1};
 }
 
+.closeIcon {
+  color: #ccc;
+  float: right;
+  font-size: 30px;
+}
+
+.closeIcon:hover {
+  cursor: pointer;
+}
+
 
 /**********   form   **********/
 * {

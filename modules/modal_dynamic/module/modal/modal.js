@@ -4,7 +4,7 @@
  * @version 1.1
  * @author Richard Frausto
  * @param {object} config - A config object that determines buttons and position
- * @example
+ * @example config object
  * {
  *  position: 'top' | 'middle' | 'bottom',
  *  content: (content),
@@ -12,7 +12,7 @@
  *  cancelBtn: true | false
  * }
  */
-var objModal = function(config){ 
+var objModal = function(config){
 
   // DOM
   var modal = document.createElement("div"),
@@ -34,6 +34,7 @@ var objModal = function(config){
   // is dynamically built and does not exist in the DOM before now.
   var modalCancel = document.querySelector("#cancel");
   var modalSubmit = document.querySelector("#submit");
+  var modalCloseIcon = document.querySelector(".closeIcon");
 
 
   // listeners
@@ -45,6 +46,9 @@ var objModal = function(config){
     modalSubmit.addEventListener( 'click', handleSubmit );
   }
 
+  if (modalCloseIcon){
+    modalCloseIcon.addEventListener( 'click', handleCloseIcon );
+  }
 
   // functions
   function createModal(){
@@ -59,7 +63,8 @@ var objModal = function(config){
     inner.className = "inner";
 
     config.submitBtn = config.submitBtn || false;
-    inner.innerHTML = '<div class="content">' + config.content + '</div>' +
+    inner.innerHTML = '<span class="closeIcon">&times;</span>' +
+      '</div><div class="content">' + config.content + '</div>' +
       '<div id="buttons" class="row">' +
       '<button type="button" id="cancel" class="btn btn-secondary right">Cancel</button>' +
       '</div>';
@@ -77,6 +82,10 @@ var objModal = function(config){
   }
 
   function handleClose(){
+    closeModal();
+  }
+
+  function handleCloseIcon(){
     closeModal();
   }
 
@@ -107,10 +116,11 @@ var objModal = function(config){
 
   function addButtons(){
     if (config.submitBtn){
-      buttons = '<button type="button" id="submit" class="btn btn-primary right">Submit</button>' +
-        '<button type="button" id="cancel" class="btn btn-secondary right">Cancel</button>'
-    } else {
-      buttons = '<button type="button" id="cancel" class="btn btn-secondary right">Cancel</button>';
+      buttons += '<button type="button" id="submit" class="btn btn-primary right">Submit</button>'
+    }
+
+    if (config.cancelBtn) {
+      buttons += '<button type="button" id="cancel" class="btn btn-secondary right">Cancel</button>';
     };
 
     var row = document.getElementById("buttons");
